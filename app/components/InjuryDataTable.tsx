@@ -23,7 +23,7 @@ export const InjuryDataTable = () => {
         const getInjuryData = async () => {
             try {
                 console.log(context?.authuser?.email);
-                const result = await axios.post('http://localhost:3000/api/injurydata/getalldata', { email: context?.authuser?.email });
+                const result = await axios.post('https://lief-web-task-d1g8.vercel.app/api/injurydata/getalldata', { email: context?.authuser?.email });
                 if (result.data?.injuries) setInjuryData(result.data.injuries);
             } catch (error) {
                 console.error("Error fetching injury data:", error);
@@ -35,7 +35,7 @@ export const InjuryDataTable = () => {
 
     const handleInjuryDelete = async (id: string) => {
         try {
-            const res = await axios.post(`http://localhost:3000/api/injurydata/deletedata/`,{id:id,email:context?.authuser?.email});
+            const res = await axios.post(`https://lief-web-task-d1g8.vercel.app/api/injurydata/deletedata/`,{id:id,email:context?.authuser?.email});
             if (res.data?.injuries) setInjuryData(res.data.injuries);
         } catch (err) {
             console.log(err);
@@ -73,7 +73,7 @@ export const InjuryDataTable = () => {
         console.log("Filters applied:", { filterOption, nameFilter, startDate, endDate });
         if (filterOption === "name") {
             try {
-                const res = await axios.get(`http://localhost:3000/api/injurydata/getByName/${nameFilter}`);
+                const res = await axios.get(`https://lief-web-task-d1g8.vercel.app/api/injurydata/getByName/${nameFilter}`);
                 if (res.data?.injuries) setInjuryData(res.data.injuries);
             }
             catch (err) {
@@ -83,7 +83,7 @@ export const InjuryDataTable = () => {
         else if (filterOption === "injuryDate" || filterOption === "reportDate") {
             console.log('api calling')
             try {
-                const res = await axios.get(`http://localhost:3000/api/injurydata/getByDate?datetype=${filterOption}&startdate=${startDate}&enddate=${endDate}`);
+                const res = await axios.get(`https://lief-web-task-d1g8.vercel.app/api/injurydata/getByDate?datetype=${filterOption}&startdate=${startDate}&enddate=${endDate}`);
                 if (res.data?.injuries) setInjuryData(res.data.injuries);
             }
             catch (err) {
@@ -98,7 +98,7 @@ export const InjuryDataTable = () => {
         setStartDate('');
         setEndDate('');
         try {
-            const result = await axios.post('http://localhost:3000/api/injurydata/getalldata', { userid: context?.authuser?.email });
+            const result = await axios.post('https://lief-web-task-d1g8.vercel.app/api/injurydata/getalldata', { userid: context?.authuser?.email });
             if (result.data?.injuries) setInjuryData(result.data.injuries);
         } catch (error) {
             console.error("Error fetching injury data:", error);

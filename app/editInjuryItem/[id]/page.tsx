@@ -40,7 +40,7 @@ const EditInjuryItem = ({ params }: { params: { id: string } }) => {
         //     window.location.href='/';
         // }
         const fetchData = async () => {
-            const res = await axios.get(`http://localhost:3000/api/injurydata/getIndividualData/${id}`);
+            const res = await axios.get(`https://lief-web-task-d1g8.vercel.app/api/injurydata/getIndividualData/${id}`);
             const data = (res.data.injury);
             console.log(data);
             setReporter(data.name);
@@ -93,7 +93,7 @@ const EditInjuryItem = ({ params }: { params: { id: string } }) => {
         console.log(injuryArray);
         try {
             if(!isEditable){
-            const res = await axios.post("http://localhost:3000/api/injury/create", {
+            const res = await axios.post("https://lief-web-task-d1g8.vercel.app/api/injury/create", {
                 reporter,
                 dateOfIncident,
                 dateOfReporting,
@@ -106,7 +106,7 @@ const EditInjuryItem = ({ params }: { params: { id: string } }) => {
         }
         else{
             console.log('here')
-            const res=await axios.post("http://localhost:3000/api/injury/update",{
+            const res=await axios.post("https://lief-web-task-d1g8.vercel.app/api/injury/update",{
                 id,
                 reporter,
                 dateOfIncident,
