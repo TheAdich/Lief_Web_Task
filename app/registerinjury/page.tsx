@@ -30,7 +30,7 @@ const RegisterInjury = () => {
     const [points,setPoints]=useState<pointsProps[]>([]);
     const [injuryArray,setInjuryArray]=useState<InjuryDescriptionProps[]>([])
     const context=useContext(AuthContext);
-    const [isEditable,setIsEditable]=useState<boolean>(false);
+    const [isEditable]=useState<boolean>(false);
     
 
    
