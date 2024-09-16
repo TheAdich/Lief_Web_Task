@@ -67,7 +67,7 @@ useEffect(() => {
             return;
         }
           try{
-              const res=await axios.post("https://lief-web-task-d1g8.vercel.app/api/injury/create",{
+              const res=await axios.post("https://lief-web-task.vercel.app/api/injury/create",{
                   reporter,
                   dateOfIncident,
                   dateOfReporting,
