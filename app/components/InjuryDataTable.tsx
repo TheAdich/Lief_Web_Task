@@ -98,7 +98,7 @@ export const InjuryDataTable = () => {
         setStartDate('');
         setEndDate('');
         try {
-            const result = await axios.post('https://lief-web-task.vercel.app/api/injurydata/getalldata', { userid: context?.authuser?.email });
+            const result = await axios.post('https://lief-web-task.vercel.app/api/injurydata/getalldata', { email: context?.authuser?.email });
             if (result.data?.injuries) setInjuryData(result.data.injuries);
         } catch (error) {
             console.error("Error fetching injury data:", error);
