@@ -63,7 +63,7 @@ useEffect(() => {
     const handleFormSubmit = async(e: React.SyntheticEvent) => {
         e.preventDefault();
         if(injuryArray.length===0) {
-            alert("Please enter atleast one injury description");
+            alert("Please enter   injury description");
             return;
         }
           try{
