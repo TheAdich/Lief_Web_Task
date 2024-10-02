@@ -86,8 +86,8 @@ useEffect(() => {
 
     return (
         <div className="w-3/4 mx-auto p-6 mt-10 bg-opacity-30 bg-slate-200 rounded-xl shadow-xl backdrop-blur-md">
-            <h1 className="text-2xl font-bold text-white mb-4 text-center">Injury Data Form</h1>
-            <p>Just fill it completely</p>
+            <h1 className="text-md font-bold text-white mb-4 text-center">Injury Data Form</h1>
+            <p className="font-medium text-sm">Just fill it completely</p>
             <form className="space-y-4" onSubmit={(e) => handleFormSubmit(e)}>
                 <div>
                     <label className="block text-white text-sm font-medium mb-1">Reporter</label>
